@@ -4,6 +4,6 @@
 <template>
   <main>
     <h1>Hello</h1>
-    <p>Wellcome to chamba</p>
+    <p>HOla login</p>
   </main>
 </template>
