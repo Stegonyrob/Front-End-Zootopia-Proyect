@@ -96,7 +96,7 @@ export const useAnimalsStore = defineStore('animals', () => {
             name: 'Iguana',
             family: 'Reptil',
             gener: 'Hembra',
-            origin: 'América Central y del Sur.jpg',
+            origin: 'América Central y del Sur',
             date: 'date',
             tipe: 'Iguanidae',
             title: 'Iguana',
@@ -107,7 +107,7 @@ export const useAnimalsStore = defineStore('animals', () => {
             name: 'León',
             family: 'Felidae',
             gener: 'Hembra',
-            origin: 'África, Asia y América.jpg',
+            origin: 'África, Asia y América.',
             date: 'date',
             tipe: 'Panthera',
             title: 'León',
@@ -129,7 +129,7 @@ export const useAnimalsStore = defineStore('animals', () => {
             name: 'Liebre',
             family: 'Leporidae',
             gener: 'macho',
-            origin: 'Todos los continentes',
+            origin: 'Mundial',
             date: 'date',
             tipe: 'Lepus',
             title: 'Liebre',
@@ -191,7 +191,7 @@ export const useAnimalsStore = defineStore('animals', () => {
         },
         {
             id: 17,
-            image: './src/assets/img/ratalmizclera.jpg',
+            image: './src/assets/img/rataalmizclera.jpg',
             name: 'Rata Almizclera',
             family: 'Mustelidae',
             gener: 'macho',
@@ -209,7 +209,7 @@ export const useAnimalsStore = defineStore('animals', () => {
             origin: 'Sudamérica',
             date: 'date',
             tipe: 'Boidae',
-            title: 'Serpiente Anaconda',
+            title: 'Anaconda',
         },
         {
             id: 19,
@@ -220,8 +220,9 @@ export const useAnimalsStore = defineStore('animals', () => {
             origin: 'América del Sur',
             date: 'date',
             tipe: 'Crotalus',
-            title: 'Serpiente Cascabel',
+            title: 'Cascabel',
         },
+
         {
             id: 20,
             image: './src/assets/img/tejon.jpg',
@@ -246,7 +247,7 @@ export const useAnimalsStore = defineStore('animals', () => {
         },
         {
             id: 22,
-            image: './src/assets/img/tigredebengala',
+            image: './src/assets/img/tigredebengala.jpg',
             name: 'Tigre',
             family: 'Felidae',
             gener: 'Hembra',
@@ -290,19 +291,21 @@ export const useAnimalsStore = defineStore('animals', () => {
         },
         {
             id: 26,
-            image: './src/assets/img/zorro.jpg',
+            image: './src/assets/img/zorrodelasnieves.jpg',
             name: 'Zorro de las Nieves',
             family: 'Canidae',
             gener: 'Macho',
             origin: 'Artico',
             date: 'date',
             tipe: 'Vulpes',
-            title: 'Zorro de las Nieves',
+            title: 'Zorro Nival',
         }
     ]);
+
     function addAnimal(newAnimal: Animal) {
         animals.push(newAnimal);
     }
+
     return {
         animals,
         addAnimal
