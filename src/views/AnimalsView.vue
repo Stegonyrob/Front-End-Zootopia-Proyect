@@ -12,6 +12,7 @@ import CardAnimals from '../components/animals/CardAnimals.vue'
 <style lang="scss" scoped >
 h1{
     text-align: center;
-    font-size: 5rem;
+    font-size: 4rem;
+    margin-top: 2rem;
 }
 </style>

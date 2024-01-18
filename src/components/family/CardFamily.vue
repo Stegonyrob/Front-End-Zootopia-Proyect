@@ -17,7 +17,7 @@ const allFamilies = ref<Family []>(familyStore.families);
   
       <div v-for="(family, index) in allFamilies " :key="family.id" class="cards">
       <img :src="family.image" :alt="family.family">
-       <h5> {{ family.family }}</h5>
+       <h1> {{ family.family }}</h1>
      </div>
  
 </template>
@@ -28,12 +28,12 @@ const allFamilies = ref<Family []>(familyStore.families);
   width: 20rem;
   height: 30rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   border-radius: 12px;
   background-color: rgb(61, 113, 61);
-  
+
 .cards:hover{
   background-color: #1c1919;
 }

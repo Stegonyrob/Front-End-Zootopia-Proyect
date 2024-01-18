@@ -5,7 +5,7 @@
 <template>
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="#">Zootopia</a>
-    <img class= "img-logo" width="90" height="80" src="../../assets/img/icons8-cat-footprint-96 (1).png" alt="cat-footprint"/>
+    <img class= "img-logo" width="90" height="90" src="../../assets/img/icons8-cat-footprint-96 (1).png" alt="cat-footprint"/>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
