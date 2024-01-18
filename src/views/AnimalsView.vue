@@ -4,11 +4,14 @@ import CardAnimals from '../components/animals/CardAnimals.vue'
 </script>
 <template>
     <div>
-        <h2>this animal view</h2>
+        <h1>Ejemplares</h1>
         <CardAnimals/>
         
     </div>
 </template>
 <style lang="scss" scoped >
-
+h1{
+    text-align: center;
+    font-size: 5rem;
+}
 </style>

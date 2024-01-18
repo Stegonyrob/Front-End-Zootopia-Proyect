@@ -10,12 +10,7 @@ import Footer from "./components/footer/Footer.vue";
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Inicio </RouterLink>
-        <RouterLink to="/Familias"> Familias</RouterLink>
-        <RouterLink to="/animals"> Animals </RouterLink>
-        <RouterLink to="/Add"> Añadir</RouterLink>
-        <RouterLink to="/Edit"> Editar</RouterLink>
-        <RouterLink to="/Buscar"> Buscar</RouterLink>
+       
       </nav>
     </div>
   </header>
