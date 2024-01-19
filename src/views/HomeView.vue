@@ -10,3 +10,11 @@
     <p>HOla login</p>
   </main>
 </template>
+
+<style scoped lang="scss">
+
+main {
+  background-image: url("../assets/img/fondo.jpg");
+  background-size: cover;
+}
+</style>
