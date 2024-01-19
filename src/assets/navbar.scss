@@ -1,0 +1,29 @@
+$bg-green:#656D4A;
+
+
+.navbar {
+
+ background-color: $bg-green;
+ padding: 1.5%;
+ font-size: large;
+ text-align: right;
+ display: flex!important;
+  flex-basis: auto;
+  flex-direction: row;
+}
+
+.navbar-brand {
+  font-size: 280%;
+  font-family: "Irish Grover";
+  color: white;
+}
+
+.nav-link {
+  font-family: "Irish Grover";
+  color: white;
+}
+
+.img-logo {
+  color: white; 
+}
+
