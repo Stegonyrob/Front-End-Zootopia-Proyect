@@ -1,20 +1,31 @@
 <script setup lang="ts">
-
-
-
+import FormLogin from '../components/login/FormLogin.vue';
 </script>
 
 <template>
   <main>
-    <h1>Hello</h1>
-    <p>HOla login</p>
+    <body>
+
+
+      <FormLogin/>
+    </body>
   </main>
 </template>
 
 <style scoped lang="scss">
-
-main {
+body {
   background-image: url("../assets/img/fondo.jpg");
-  background-size: cover;
+  background-size:cover;
+
+  @media only screen and (max-width: 600px){
+    background-size: auto;
+    background-position: right;
+  }
+}
+footer {
+  display: none;
+}
+header {
+  display: none;
 }
 </style>
