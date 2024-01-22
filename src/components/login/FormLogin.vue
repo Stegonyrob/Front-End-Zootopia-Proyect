@@ -2,7 +2,7 @@
 <template>
   <div class="form_container">
     <div class="title_form">
-      <h1>Login</h1>
+      <h1 class="title">Login</h1>
     </div>
     <form class="login">
       <div class="form-group">
@@ -27,9 +27,9 @@
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <label class="form-check-label" for="exampleCheck1">Recordar contraseña</label>
       </div>
-      <div>
+      <div class="container_btn">
       <button id="btn_sign_up" type="submit" class="boton">SIGN UP</button>
     </div>
     </form>

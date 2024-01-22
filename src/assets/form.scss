@@ -10,9 +10,11 @@ align-items: center;
 margin-top: 10%;
 
 .title_form {
-    font-size: large;
     color: white;
     padding: 2%;
+    .title {
+        font-size: 5em;
+    }
 }
 }
 .login {
@@ -29,6 +31,7 @@ margin-top: 10%;
         padding: 5%;
         justify-content: center;
         margin-left: 3em;
+        
 
     }
      .form-check-input {
@@ -39,11 +42,20 @@ margin-top: 10%;
     } 
     .form-check-label {
         padding-left: 3%;
+        @media only screen and (max-width: 600px) {
+            font-size: 1em;
+        }
     }
+}
+
+.container_btn {
+    text-align: center;
+    padding: 5%;
 }
 
 #btn_sign_up {
     text-align: center;
+    color: white;
     font-family: "Irish Grover";
     font-size: 2em;
     border-radius: 15px;
