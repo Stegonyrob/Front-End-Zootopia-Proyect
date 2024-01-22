@@ -5,6 +5,7 @@ import AddViewVue from '@/views/AddView.vue'
 import FamilyViewVue from '@/views/FamilyView.vue'
 import EditViewVue from '@/views/EditView.vue'
 import FiltersPageViewVue from '@/views/FiltersPageView.vue'
+import { useAuthStore } from '@/stores/Auth'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -52,6 +53,14 @@ const router = createRouter({
     //   component: () => import('../views/AboutView.vue')
     // }
   ]
+})
+
+router.beforeEach( (to, from) => {
+  const store = useAuthStore()
+
+  if (to.meta.requiresAuth && !store.user.isAuthenticated){
+    return {name: 'login'}
+  }
 })
 
 export default router
