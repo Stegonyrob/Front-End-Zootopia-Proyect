@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 import { useAuthStore } from '@/stores/Auth';
 import { ref } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 
 const username = ref('')
 const password = ref('')
-const route = useRoute()
 const router = useRouter()
 const store = useAuthStore()
 
@@ -19,6 +18,8 @@ function login() {
   }
 
 }
+
+
 </script>
 <template>
   <div class="form_container">
