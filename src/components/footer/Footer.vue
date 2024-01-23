@@ -40,6 +40,7 @@
 @import '../../assets/main.scss';
 
 footer {
+  margin-top: 5rem;
   background-color: #7F4F24;
   display: flex;
   justify-content: space-between;
