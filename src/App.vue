@@ -5,8 +5,8 @@ import Footer from "./components/footer/Footer.vue";
 </script>
 
 <template >
-  <header v-if="$route.name !== 'Inicio'">
-    <Navbar/>
+  <header >
+    <Navbar v-if="$route.name !== 'Inicio'"/>
 
     <div class="wrapper">
       <nav>
