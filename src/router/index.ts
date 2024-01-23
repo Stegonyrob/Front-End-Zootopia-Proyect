@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import FamilyView from '../views/FamilyView.vue'
 import AddViewVue from '@/views/AddView.vue'
 import FamilyViewVue from '@/views/FamilyView.vue'
 import EditViewVue from '@/views/EditView.vue'
 import FiltersPageViewVue from '@/views/FiltersPageView.vue'
+import { useAuthStore } from '@/stores/Auth'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +14,7 @@ const router = createRouter({
       name: 'Inicio',
       component: HomeView
     },
+=======
      {
       path: '/Familias',
       name: 'Familias',
@@ -38,20 +39,19 @@ const router = createRouter({
       component: EditViewVue
     },
     {
-      path: '/Buscar',
+      path: '/filters',
       name: 'Buscar',
       component: FiltersPageViewVue
     }, 
-
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // }
   ]
+})
+
+router.beforeEach( (to, from) => {
+  const store = useAuthStore()
+
+  if (to.meta.requiresAuth && !store.user.isAuthenticated){
+    return {name: 'login'}
+  }
 })
 
 export default router

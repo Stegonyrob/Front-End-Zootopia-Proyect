@@ -1,0 +1,71 @@
+$bg-green:#656D4A;
+
+
+
+.form_container {
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+margin-top: 10%;
+
+.title_form {
+    color: white;
+    padding: 2%;
+    
+    .title {
+        font-size: 5rem;
+    }
+}
+}
+.login {
+    background-color: $bg-green, 0.5;
+    color: white;
+    width: 40%;
+    margin: 0 auto;
+    padding: 2%;
+    align-items: center;
+    
+
+
+    .form-check-input {
+        padding: 5%;
+        justify-content: center;
+        margin-left: 3em;
+        
+
+    }
+     .form-check-input {
+        padding: 2%;
+        float: left;
+        
+        
+    } 
+    .form-check-label {
+        padding-left: 3%;
+        @media only screen and (max-width: 600px) {
+            font-size: 1em;
+        }
+    }
+}
+
+.container_btn {
+    text-align: center;
+    padding: 5%;
+}
+
+#btn_sign_up {
+    text-align: center;
+    color: white;
+    font-family: "Irish Grover";
+    font-size: 2em;
+    border-radius: 15px;
+    border: #333D29 solid 1px;
+    background-color: #333D29;
+    padding: 0.5em 1em;
+    @media only screen and (max-width: 600px) {
+        font-size: 1.5em;
+    }
+   
+
+}
