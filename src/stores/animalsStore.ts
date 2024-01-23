@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
 import { reactive } from 'vue';
-
 interface Animal {
     id: number;
     image: string;
@@ -12,7 +11,6 @@ interface Animal {
     tipe: string;
     title: string;
 }
-
 export const useAnimalsStore = defineStore('animals', () => {
     const animals = reactive<Animal[]>([
         {
@@ -224,7 +222,6 @@ export const useAnimalsStore = defineStore('animals', () => {
             tipe: 'Crotalus',
             title: 'Cascabel',
         },
-
         {
             id: 20,
             image: './src/assets/img/tejon.jpg',
