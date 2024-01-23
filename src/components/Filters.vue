@@ -1,32 +1,8 @@
 <script setup lang="ts">
 import { useAnimalsStore } from '@/stores/animalsStore';
-import { computed, ref } from 'vue';
 
 
-interface Animal {
-  id: number;
-  image: string;
-  name: string;
-  family: string;
-  gener: string;
-  origin: string;
-  date: string;
-  tipe: string;
-  title: string;
-}
-const animalStore = useAnimalsStore();
-const allAnimals = ref<Animal[]>(animalStore.animals);
-const itemsPerPage = 4;
-const currentPage = ref(1);
-const pages = computed(() => Math.ceil(allAnimals.value.length / itemsPerPage));
-const sendEditForm = (animalId: number) => {
-  // Lógica para enviar el formulario de edición
-}
-const changePage = (page: number) => {
-  if (page >= 1 && page <= pages.value) {
-    currentPage.value = page;
-  }
-}
+
 </script>
 <template>
     <div>
@@ -34,7 +10,7 @@ const changePage = (page: number) => {
             <form action="">
                 <label for="">
                     <p>Nombre</p>
-                    <input type="text">
+                    <input type="text" >
                 </label>
                 <label for="">
                     <p>Tipo</p>
@@ -58,41 +34,12 @@ const changePage = (page: number) => {
                 </label>
 
                 <div class="button_div">
-                    <button>Buscar</button>
+                    <button on-keyup="searchData">Buscar</button>
                 </div>
             </form>
         </aside>
         <section>
-            <div class="animals">
-                <div class="animals-cards">
-                    <div v-for="(animal, index) in allAnimals.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)" :key="animal.id" class="animal-card">
-                        <img :src="animal.image" :alt="animal.title">
-                        <div class="info-card">
-                            <h3>{{ animal.title }}</h3>
-                            <h5>Familia: {{ animal.family }}</h5>
-                            <h5>Genero: {{ animal.gener }}</h5>
-                            <h5>Origen: {{ animal.origin }}</h5>
-                            <h5>Fecha de Entrada: {{ animal.date }}</h5>
-                            <h5>Nombre: {{ animal.name }}</h5>
-                            <h5>Tipo: {{ animal.tipe }}</h5>
-                            <button><i class="bi bi-pencil-square" @click="sendEditForm(animal.id)"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <nav aria-label="page">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item" :class="{ disabled: currentPage === 1 }">
-                            <button class="page-link" @click="changePage(currentPage - 1)" :disabled="currentPage === 1">Previous</button>
-                        </li>
-                        <li class="page-item" v-for="page in pages" :key="page">
-                            <button class="page-link" @click="changePage(page)">{{ page }}</button>
-                        </li>
-                        <li class="page-item" :class="{ disabled: currentPage === pages }">
-                            <button class="page-link" @click="changePage(currentPage + 1)" :disabled="currentPage === pages">Next</button>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            
         </section>
     </div>
 </template>
@@ -101,15 +48,37 @@ const changePage = (page: number) => {
         display: grid;
         grid-template-columns: 1fr 3fr;
     }
-    form{
+    @media (max-width: 630px) {
+    div{
+        display: flex;
+        flex-direction: column;
+    }
+ }
+    aside{
         background-color: #B6AD90;
-        height: 100vh;
+        height: 100%;
+    }
+    @media (max-width: 630px) {
+    aside{
+        width: 100%;
+    }
+ }
+    form{
         display: flex;
         flex-wrap: wrap;
         align-content: flex-start;
         gap: 1rem;
         padding-left: 1rem;
+        margin-top: 2rem;
         margin-right: 1rem;
+        @media (max-width: 630px) {
+            form{
+                align-content: stretch;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+            }
+        }
 
         input{
             background-color: #414833;
@@ -117,6 +86,7 @@ const changePage = (page: number) => {
             border: none;
             height: 4rem;
             border-radius: 20px;
+            font-size: 1.8rem;
         }
         .inputLarge{
             width: 34rem;
@@ -124,6 +94,7 @@ const changePage = (page: number) => {
         button{
             background-color: #7F4F24;
             color: #fff;
+            font-size: 1.8rem;
             border: none;
             border-radius: 20px;
             height: 4rem;
@@ -132,6 +103,11 @@ const changePage = (page: number) => {
             position: relative;
             right: -20rem;
         }
+        @media (max-width: 630px) {
+            button{
+                right: auto;
+            }
+        }
         .button_div{
             display: flex;
         }
@@ -139,14 +115,17 @@ const changePage = (page: number) => {
 .animals{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .animals-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     margin-bottom: 5rem;
-
+    
+    
     .animal-card {
+        width: 30rem;
         margin: 1rem;
         padding: 1rem;
         border: 1px solid #ccc;
@@ -155,6 +134,7 @@ const changePage = (page: number) => {
         background-color: #656D4A;
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         h5{
             font-size: 1.5rem;
@@ -163,16 +143,19 @@ const changePage = (page: number) => {
         }
 
         img {
-            width: 20rem;
-            height: 20rem;
+            width: 28rem;
+            height: 28rem;
             cursor: pointer;
             border-radius:3rem;
         }
 
         .info-card{
+            height: 100%;
+            width: 100%;
             border-radius:3rem;
             background:#A4AC86;
-            margin:-1rem;
+            margin-top: 1rem;
+            padding: 1rem;
             display: flex;
             flex-direction: column;
             gap: 2rem;
@@ -188,4 +171,15 @@ const changePage = (page: number) => {
         }
     }
 }
+@media (max-width: 1337px) {
+    .animals-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }   
+    } 
+ @media (max-width: 1012px) {
+    .animals-cards{
+        grid-template-columns: 1fr;
+    }
+ }
+    
 </style>
