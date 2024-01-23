@@ -1,22 +1,24 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { useAnimalsStore } from '../../stores/animalsStore';
+
+import axios from 'axios';
+
+
 
 interface Animal {
  id: number;
- image: string;
+ image_path: string;
  name: string;
  family: string;
  gener: string;
  origin: string;
  date: string;
- tipe: string;
+ type: string;
  title: string;
 }
 
-const animalStore = useAnimalsStore();
-const allAnimals = ref<Animal[]>(animalStore.animals);
+const allAnimals = ref<Animal[]>([]);
 const itemsPerPage = 4;
 const currentPage = ref(1);
 const pages = computed(() => Math.ceil(allAnimals.value.length / itemsPerPage));
@@ -29,16 +31,25 @@ const changePage = (page: number) => {
  }
 }
 
+const fetchAnimals = async () => {
+ const response = await axios.get("http://localhost:8080/animals");
+ allAnimals.value = response.data;
+};
+
+fetchAnimals();
+
+
 const sendEditForm = (id: any) => {
  router.push({ name: 'Editar', params: { id: id } });
 }
 </script>
 <template>
+
   <div class="animals">
     <div class="animals-cards">
       <div v-for="(animal, index) in allAnimals.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)"
         :key="animal.id" class="animal-card">
-        <img :src="animal.image" :alt="animal.title">
+        <img :src="animal.image_path" :alt="animal.title">
         <div class="info-card">
           <h3>{{ animal.title }}</h3>
           <h5>Familia: {{ animal.family }}</h5>
@@ -46,7 +57,7 @@ const sendEditForm = (id: any) => {
           <h5>Origen: {{ animal.origin }}</h5>
           <h5>Fecha de Entrada: {{ animal.date }}</h5>
           <h5>Nombre: {{ animal.name }}</h5>
-          <h5>Tipo: {{ animal.tipe }}</h5>
+          <h5>Tipo: {{ animal.type }}</h5>
           <button @click="sendEditForm(animal.id)"><i class="bi bi-pencil-square"></i></button>
         </div>
       </div>
