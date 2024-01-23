@@ -16,6 +16,9 @@ function login() {
     const redirectPath = '/Familias' 
     router.push(redirectPath)
   }
+  else {
+    alert("Usuario o contraseña incorrecta")
+  }
 
 }
 
