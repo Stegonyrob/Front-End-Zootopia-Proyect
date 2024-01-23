@@ -9,8 +9,11 @@ import Footer from "./components/footer/Footer.vue";
     <Navbar />
 
     <div class="wrapper">
-      <nav>
-       
+      <nav>   
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/animals">Animals</RouterLink>
+        <RouterLink to="/form">Form</RouterLink>
+        <RouterLink to="/filters">Busqueda</RouterLink>
       </nav>
     </div>
   </header>
