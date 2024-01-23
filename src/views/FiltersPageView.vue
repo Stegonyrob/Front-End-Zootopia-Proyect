@@ -7,4 +7,6 @@ import Filters from '@/components/Filters.vue';
     </div>
 </template>
 <style lang="scss" scoped>
+
 </style>
+

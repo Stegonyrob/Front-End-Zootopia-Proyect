@@ -1,9 +1,16 @@
-@import './base.scss';
-@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Lemon&family=Open+Sans&family=PT+Sans:wght@400;700&family=Young+Serif&display=swap');
+@import "./navbar.scss";
+@import "./base.scss";
+//@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Lemon&family=Open+Sans&family=PT+Sans:wght@400;700&family=Young+Serif&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Irish+Grover&family=Roboto+Mono:wght@300&display=swap");
 
 html{
     box-sizing: border-box;
     font-size: 62.5%;/*10px = 1rem */
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /*10px = 1rem*/
 }
 *, *::before, *::after{
     box-sizing: inherit;
@@ -15,15 +22,37 @@ body{
     p, input, label, h4, a{
         font-family: 'Asap Condensed', sans-serif;
     }
+}    
+body {
+  display: flex;
+  flex-direction: column;
+  h1,
+  h2,
+  h3 {
+    font-family: "Irish Grover";
+  }
+  p,
+  input,
+  label,
+  h4,
+  a {
+    font-family: "Irish Grover", "Asap Condensed", sans-serif;
+  }
+
 }
-h1{
-    font-size: 3.2rem;
+h1 {
+  font-size: 3.2rem;
 }
-h2{
-    font-size: 2.8rem;
+h2 {
+  font-size: 2.8rem;
 }
-h3{
-    font-size: 2.2rem;
+h3 {
+  font-size: 2.2rem;
+}
+p,
+label,
+a {
+  font-size: 1.8rem;
 }
 p, label, a, button{
     font-size: 1.8rem;

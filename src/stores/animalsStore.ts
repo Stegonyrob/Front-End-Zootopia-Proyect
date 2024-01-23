@@ -222,7 +222,6 @@ export const useAnimalsStore = defineStore('animals', () => {
             tipe: 'Crotalus',
             title: 'Cascabel',
         },
-
         {
             id: 20,
             image: './src/assets/img/tejon.jpg',
