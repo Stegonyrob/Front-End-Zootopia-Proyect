@@ -10,8 +10,7 @@ import Footer from "./components/footer/Footer.vue";
 
     <div class="wrapper">
       <nav>
-    <router-view/>
-  
+        <router-view/>
       </nav>
     </div>
   </header>
