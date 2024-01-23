@@ -32,7 +32,7 @@ const changePage = (page: number) => {
 }
 
 const fetchAnimals = async () => {
- const response = await axios.get("http://localhost:8080/animals");
+ const response = await axios.get("http://localhost:8080/api/v1/animals");
  allAnimals.value = response.data;
 };
 
