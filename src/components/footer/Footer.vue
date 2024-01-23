@@ -47,6 +47,8 @@ footer {
   color: White;
   font-size: 0.9rem;
   padding: 1.5%;
+  position: fixed;
+  width: 100%;
   bottom: 0;
   
   
