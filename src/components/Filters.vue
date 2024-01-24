@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import { useAnimalsStore } from '@/stores/animalsStore';
+let requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
 
+fetch("http://localhost:8080/api/v1/animals", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 
 
 </script>
@@ -60,7 +67,7 @@ import { useAnimalsStore } from '@/stores/animalsStore';
     }
     @media (max-width: 630px) {
     aside{
-        width: 100%;
+        max-width: 100%;
     }
  }
     form{
@@ -71,6 +78,7 @@ import { useAnimalsStore } from '@/stores/animalsStore';
         padding-left: 1rem;
         margin-top: 2rem;
         margin-right: 1rem;
+        height: 70vh;
         @media (max-width: 630px) {
             form{
                 align-content: stretch;

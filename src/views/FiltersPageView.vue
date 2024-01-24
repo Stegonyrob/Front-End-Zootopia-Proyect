@@ -3,7 +3,7 @@ import Filters from '@/components/Filters.vue';
 </script>
 <template>
     <div>
-        <Filters />
+        <Filters/>
     </div>
 </template>
 <style lang="scss" scoped>
