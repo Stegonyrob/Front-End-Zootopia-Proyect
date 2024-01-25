@@ -1,20 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-<<<<<<< HEAD
-
-import FiltersPageViewVue from '@/views/FiltersPageView.vue'
-
-=======
->>>>>>> dev
 import AddViewVue from '@/views/AddView.vue'
 import FamilyViewVue from '@/views/FamilyView.vue'
 import EditViewVue from '@/views/EditView.vue'
-<<<<<<< HEAD
-
-=======
 import FiltersPageViewVue from '@/views/FiltersPageView.vue'
 import { useAuthStore } from '@/stores/Auth'
->>>>>>> dev
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,16 +28,11 @@ const router = createRouter({
       component: () => import('../views/AnimalsView.vue')
     },
     {
-<<<<<<< HEAD
 
       path: '/filters',
       name: 'Filters Page',
       component: FiltersPageViewVue
-    }
-
-=======
->>>>>>> dev
-      path: '/Add',
+    },{      path: '/Add',
       name: 'Añadir',
       component: AddViewVue
     }, 
@@ -56,7 +41,6 @@ const router = createRouter({
       name: 'Editar',
       component: EditViewVue
     },
-<<<<<<< HEAD
 
 
     // {
@@ -67,13 +51,11 @@ const router = createRouter({
     //   // which is lazy-loaded when the route is visited.
     //   component: () => import('../views/AboutView.vue')
     // }
-=======
     {
       path: '/filters',
       name: 'Buscar',
       component: FiltersPageViewVue
     }, 
->>>>>>> dev
   ]
 })
 
