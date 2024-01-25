@@ -125,7 +125,7 @@ height: 60%;
  }
 }}
 .page{
-    margin-bottom: 1rem;
+    margin-bottom: 10rem;
     margin-top: 1rem;
    }
 </style>
