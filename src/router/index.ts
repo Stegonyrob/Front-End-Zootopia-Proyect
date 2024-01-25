@@ -33,7 +33,7 @@ const router = createRouter({
       component: AddViewVue
     }, 
     {
-      path: '/Edit',
+      path: '/editar/:id',
       name: 'Editar',
       component: EditViewVue
     },
