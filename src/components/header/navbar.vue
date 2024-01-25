@@ -44,7 +44,7 @@ function logOut() {
           <a class="nav-link " href="/Edit">Editar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/Buscar">Buscar</a>
+          <a class="nav-link " href="/filters">Buscar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " id="LogOut" @click="logOut()" href="#">LogOut</a>
