@@ -14,7 +14,7 @@ const router = createRouter({
       name: 'Inicio',
       component: HomeView
     },
-=======
+
      {
       path: '/Familias',
       name: 'Familias',
