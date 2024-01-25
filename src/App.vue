@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
- 
+import { RouterView } from "vue-router";
+import Navbar from "./components/header/navbar.vue";
+import Footer from "./components/footer/Footer.vue";
 </script>
 
-<template>
-  <header>
+<template >
+  <header >
+    <Navbar v-if="$route.name !== 'Inicio'"/>
 
+<<<<<<< HEAD
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
@@ -20,12 +23,22 @@ import { RouterLink, RouterView } from 'vue-router'
 
       </nav>
     </div>
+=======
+>>>>>>> dev
   </header>
+  <div class="wrapper">
+    <nav>
+      <router-view/>
+    </nav>
+  </div>
   
-
-  <RouterView />
+  <Footer v-if="$route.name !== 'Inicio'"/>
 </template>
 
 <style scoped lang="scss">
-
+@import "./assets/main.scss";
+div{
+  height: 100%;
+  width: 100%;
+}
 </style>
