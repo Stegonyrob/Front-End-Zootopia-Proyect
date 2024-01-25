@@ -3,6 +3,8 @@ import axios from 'axios';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
+
+
 interface Animal {
  id: number;
  image_path: string;
@@ -33,44 +35,35 @@ const route = useRoute();
 
 onMounted(async () => {
  if (typeof route.params.id === 'string') {
-   id = route.params.id;
-   console.log('ID recibido en la página de edición:', id);
+    id = route.params.id;
+    console.log('ID recibido en la página de edición:', id);
 
-   try {
-     const response = await axios.get(`http://localhost:8080/api/v1/animals/${id}`);
-     currentAnimal.value = response.data;
-     console.log(response.data);
-   } catch (error) {
-     console.error('Error fetching animal:', error);
-   }
+    try {
+      const response = await axios.get(`http://localhost:8080/api/v1/animals/${id}`);
+      currentAnimal.value = response.data;
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error fetching animal:', error);
+    }
  } else {
-   console.error('ID is undefined');
+    console.error('ID is undefined');
  }
 });
-const submitForm = () => {
+
+const submitForm = async () => {
  if (!currentAnimal.value || !id) {
-   console.error('currentAnimal o ID es null');
-   return;
+    console.error('currentAnimal o ID es null');
+    return;
+ }
+
+ try {
+    const response = await axios.put(`http://localhost:8080/api/v1/animals/${id}`, currentAnimal.value);
+    console.log(response.data);
+ } catch (error) {
+    console.error('Error updating animal:', error);
  }
 }
- const animalData = currentAnimal.value;
 
- onMounted(async () => {
- if (typeof route.params.id === 'string') {
-   id = route.params.id;
-   console.log('ID recibido en la página de edición:', id);
-
-   try {
-     const response = await axios.put(`http://localhost:8080/api/v1/animals/${id}`);
-     currentAnimal.value = response.data;
-     console.log(response.data);
-   } catch (error) {
-     console.error('Error fetching animal:', error);
-   }
- } else {
-   console.error('ID is undefined');
- }
-});
 </script>
 
 
