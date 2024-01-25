@@ -34,14 +34,28 @@ const changePage = (page: number) => {
 const fetchAnimals = async () => {
  const response = await axios.get("http://localhost:8080/api/v1/animals");
  allAnimals.value = response.data;
+ console.log(response.data);
 };
 
 fetchAnimals();
 
 
+
+
+const navigateToEdit = (id: any) => {
+ if (typeof id === 'number' || typeof id === 'string') {
+    router.push({ name: 'Editar', params: { id: id } });
+ } else {
+    console.error('ID must be a number or string');
+ }
+};
+
 const sendEditForm = (id: any) => {
- router.push({ name: 'Editar', params: { id: id } });
-}
+ navigateToEdit(id);
+};
+
+
+
 </script>
 <template>
 
@@ -59,7 +73,7 @@ const sendEditForm = (id: any) => {
           <h5>Nombre: {{ animal.name }}</h5>
           <h5>Tipo: {{ animal.type }}</h5>
           <button @click="sendEditForm(animal.id)"><i class="bi bi-pencil-square"></i></button>
-        </div>
+         </div>
       </div>
     </div>
     <nav aria-label="page" class="page">
